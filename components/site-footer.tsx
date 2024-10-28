@@ -7,7 +7,7 @@ export default function SiteFooter() {
   return (
     <div className="mt-[164px] border-t p-4">
       <div className="mx-auto flex w-full max-w-[652px] items-center">
-        <p className="flex items-center gap-3 text-sm text-muted-foreground">
+        <p className="flex items-center gap-3 text-sm text-[var(--ds-gray-900)]">
           <Image
             src={avatar}
             alt="victor welander"
@@ -17,7 +17,14 @@ export default function SiteFooter() {
           />
           <span>
             Made by{" "}
-            <Link href="https://x.com/victorwelander_">Victor Welander</Link>
+            <Link
+              href="https://x.com/victorwelander_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--ds-gray-1000)]"
+            >
+              Victor Welander
+            </Link>
           </span>
         </p>
       </div>
