@@ -76,13 +76,14 @@ export default function NestedDialog() {
             </div>
           </div>
         </div>
-
-        <DialogFooter className="flex items-center justify-between border-t px-4 py-2">
+        <DialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-y-0">
           <InnerDialog>
             <InnerDialogTrigger asChild>
-              <Button variant="outline">Payment Method</Button>
+              <Button variant="outline" className="w-full sm:w-auto">
+                Payment Method
+              </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-4 p-0">
+            <InnerDialogContent className="-mt-10 p-0 md:-mt-4">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>
@@ -96,21 +97,23 @@ export default function NestedDialog() {
                 <div className="rounded-lg border p-8"></div>
               </div>
 
-              <InnerDialogFooter className="flex items-center justify-between border-t px-4 py-2">
+              <InnerDialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-x-2 sm:space-y-0">
                 <InnerDialogClose asChild>
-                  <Button variant="outline">Cancel Payment Method</Button>
+                  <Button variant="outline" className="w-full sm:w-auto">
+                    Cancel Payment Method
+                  </Button>
                 </InnerDialogClose>
-                <div className="flex items-center gap-2">
-                  <Button>Continue</Button>
-                </div>
+                <Button className="w-full sm:w-auto">Continue</Button>
               </InnerDialogFooter>
             </InnerDialogContent>
           </InnerDialog>
-          <div className="flex items-center gap-2">
+          <div className="flex w-full flex-col items-center gap-2 sm:w-auto sm:flex-row">
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline" className="w-full sm:w-auto">
+                Cancel
+              </Button>
             </DialogClose>
-            <Button>Save</Button>
+            <Button className="w-full sm:w-auto">Save</Button>
           </div>
         </DialogFooter>
       </DialogContent>

@@ -70,11 +70,13 @@ export default function DefaultDialog() {
           </div>
         </div>
 
-        <DialogFooter className="flex items-center justify-between border-t px-4 py-2">
+        <DialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-x-2 sm:space-y-0">
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline" className="w-full sm:w-auto">
+              Cancel
+            </Button>
           </DialogClose>
-          <Button>Continue</Button>
+          <Button className="w-full sm:w-auto">Continue</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
