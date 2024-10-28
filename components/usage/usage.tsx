@@ -13,46 +13,46 @@ export default function Usage() {
         </TabsList>
         <TabsContent value="default">
           <CodeBlock>{`
-<StackingDialog>
-  <StackingDialogTrigger asChild></StackingDialogTrigger>
-  <StackingDialogContent>
-    <StackingDialogHeader>
-      <StackingDialogTitle></StackingDialogTitle>
-      <StackingDialogDescription></StackingDialogDescription>
-    </StackingDialogHeader>
-    <StackingDialogFooter>
-      <StackingDialogClose asChild></StackingDialogClose>
-    </StackingDialogFooter>
-  </StackingDialogContent>
-</StackingDialog>
+<Dialog>
+  <DialogTrigger asChild></DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle></DialogTitle>
+      <DialogDescription></DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose asChild></DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
       `}</CodeBlock>
         </TabsContent>
         <TabsContent value="nested">
           <CodeBlock>{`
-<StackingDialog>
-  <StackingDialogTrigger asChild></StackingDialogTrigger>
-    <StackingDialogContent>
-      <StackingDialogHeader>
-        <StackingDialogTitle></StackingDialogTitle>
-        <StackingDialogDescription></StackingDialogDescription>
-      </StackingDialogHeader>
+<Dialog>
+  <DialogTrigger asChild></DialogTrigger>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle></DialogTitle>
+        <DialogDescription></DialogDescription>
+      </DialogHeader>
       <InnerDialog>
         <InnerDialogTrigger asChild></InnerDialogTrigger>
         <InnerDialogContent>
           <InnerDialogHeader>
             <InnerDialogTitle></InnerDialogTitle>
-            <InnerDialogDescription></InnerDialogDescription>
-          </InnerDialogHeader>
-          <InnerDialogFooter>
-            <InnerDialogClose asChild></InnerDialogClose>
-          </InnerDialogFooter>
-        </InnerDialogContent>
-      </InnerDialog>
-    <StackingDialogFooter>
-      <StackingDialogClose asChild></StackingDialogClose>
-    </StackingDialogFooter>
-  </StackingDialogContent>
-</StackingDialog>
+          <InnerDialogDescription></InnerDialogDescription>
+        </InnerDialogHeader>
+        <InnerDialogFooter>
+          <InnerDialogClose asChild></InnerDialogClose>
+        </InnerDialogFooter>
+      </InnerDialogContent>
+    </InnerDialog>
+    <DialogFooter>
+      <DialogClose asChild></DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
       `}</CodeBlock>
         </TabsContent>
       </Tabs>

@@ -1,14 +1,14 @@
 import React from "react";
 import {
-  StackingDialog,
-  StackingDialogTrigger,
-  StackingDialogContent,
-  StackingDialogHeader,
-  StackingDialogFooter,
-  StackingDialogTitle,
-  StackingDialogDescription,
-  StackingDialogClose,
-} from "@/components/ui/dialog-stacking";
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import Editor from "../editor/editor";
 
@@ -16,36 +16,36 @@ export default function DefaultDialogEditor() {
   return (
     <Editor
       scope={{
-        StackingDialog,
-        StackingDialogTrigger,
-        StackingDialogContent,
-        StackingDialogHeader,
-        StackingDialogFooter,
-        StackingDialogTitle,
-        StackingDialogDescription,
-        StackingDialogClose,
+        Dialog,
+        DialogTrigger,
+        DialogContent,
+        DialogHeader,
+        DialogFooter,
+        DialogTitle,
+        DialogDescription,
+        DialogClose,
         Button,
       }}
-      code={`<StackingDialog>
-  <StackingDialogTrigger asChild>
+      code={`<Dialog>
+  <DialogTrigger asChild>
     <Button>Default Dialog</Button>
-  </StackingDialogTrigger>
-  <StackingDialogContent>
-    <StackingDialogHeader>
-     <StackingDialogTitle>Dialog Title</StackingDialogTitle>
-     <StackingDialogDescription>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+     <DialogTitle>Dialog Title</DialogTitle>
+     <DialogDescription>
        Dialog Description
-     </StackingDialogDescription>
-    </StackingDialogHeader>
-    <StackingDialogFooter>
-      <StackingDialogClose asChild>
+     </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose asChild>
         <Button variant="outline" className="w-full">
           Close Outer Dialog
         </Button>
-      </StackingDialogClose>
-    </StackingDialogFooter>
-  </StackingDialogContent>
-</StackingDialog>`}
+      </DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`}
     />
   );
 }
