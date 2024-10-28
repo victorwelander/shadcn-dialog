@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CodeBlock from "../code-block";
 
 export default function Usage() {
@@ -106,7 +106,7 @@ export default function Usage() {
         </InnerDialogFooter>
       </InnerDialogContent>
     </InnerDialog>
-    
+
     <DialogFooter>
       <DialogClose asChild></DialogClose>
     </DialogFooter>

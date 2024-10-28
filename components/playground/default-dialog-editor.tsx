@@ -9,8 +9,8 @@ import {
   DialogDescription,
   DialogClose,
 } from "@/components/ui/dialog";
-import { Button } from "../ui/button";
-import Editor from "../editor/editor";
+import { Button } from "@/components/ui/button";
+import Editor from "@/components/editor/editor";
 
 export default function DefaultDialogEditor() {
   return (

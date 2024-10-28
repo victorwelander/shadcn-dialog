@@ -22,8 +22,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { usePaymentInputs } from "react-payment-inputs";
 import { CreditCard } from "lucide-react";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export default function NestedDialog() {
   const { getCardNumberProps } = usePaymentInputs();
@@ -33,7 +33,7 @@ export default function NestedDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Nested Dialog</Button>
+        <Button variant="outline">Nested</Button>
       </DialogTrigger>
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">

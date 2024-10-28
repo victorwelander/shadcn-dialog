@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { usePaymentInputs } from "react-payment-inputs";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { CreditCard } from "lucide-react";
 
 export default function DefaultDialog() {
@@ -23,7 +23,7 @@ export default function DefaultDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Default Dialog</Button>
+        <Button variant="outline">Default</Button>
       </DialogTrigger>
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">
