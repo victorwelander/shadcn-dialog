@@ -6,7 +6,7 @@ import "@/styles/globals.css";
 import SiteFooter from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Shadcn Dialog",
+  title: "Nested Shadcn Dialog",
   description: "Nested dialog component built on top of shadcn",
 };
 
