@@ -27,8 +27,10 @@ export default function LeftDialogPosition() {
       </DialogTrigger>
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">
-          <DialogTitle>Title</DialogTitle>
-          <DialogDescription>Description</DialogDescription>
+          <DialogTitle>Left Position</DialogTitle>
+          <DialogDescription>
+            This dialog appears from the left
+          </DialogDescription>
         </DialogHeader>
 
         <div className="h-[100px]"></div>

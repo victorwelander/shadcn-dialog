@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { SiGithub } from "react-icons/si";
+import RenderNestedDialog from "./demos/render-nested-dialog";
 
 export default function Hero() {
   return (
@@ -14,9 +15,7 @@ export default function Hero() {
         </p>
       </div>
       <div className="mt-4 flex items-center gap-3">
-        <Button>
-          <span>Render Nested Dialog</span>
-        </Button>
+        <RenderNestedDialog />
         <Button variant="outline" className="flex items-center gap-1">
           <SiGithub />
           <span>Github</span>
