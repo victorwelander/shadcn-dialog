@@ -1,79 +1,95 @@
-'use client'
+"use client";
 
-import { useState, useCallback, useRef } from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import useMeasure from 'react-use-measure'
-import copy from 'copy-to-clipboard'
-import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
+import { useState, useCallback, useRef } from "react";
+import Highlight, { defaultProps } from "prism-react-renderer";
+import useMeasure from "react-use-measure";
+import copy from "copy-to-clipboard";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 
-import styles from './code-block.module.css'
+import styles from "./code-block.module.css";
 
 const variants = {
   visible: { opacity: 1, scale: 1 },
   hidden: { opacity: 0, scale: 0.5 },
-}
+};
 
 const theme = {
   plain: {
-    color: 'var(--gray12)',
+    color: "var(--gray12)",
     fontSize: 12,
-    fontFamily: 'var(--font-mono)',
+    fontFamily: "var(--font-mono)",
   },
   styles: [
     {
-      types: ['comment'],
+      types: ["comment"],
       style: {
-        color: 'var(--gray9)',
+        color: "var(--gray9)",
       },
     },
     {
-      types: ['atrule', 'keyword', 'attr-name', 'selector', 'string'],
+      types: ["atrule", "keyword", "attr-name", "selector", "string"],
       style: {
-        color: 'var(--gray11)',
+        color: "var(--gray11)",
       },
     },
     {
-      types: ['punctuation', 'operator'],
+      types: ["punctuation", "operator"],
       style: {
-        color: 'var(--gray9)',
+        color: "var(--gray9)",
       },
     },
     {
-      types: ['class-name', 'function', 'tag'],
+      types: ["class-name", "function", "tag"],
       style: {
-        color: 'var(--gray12)',
+        color: "var(--gray12)",
       },
     },
   ],
-}
+};
 
-export const CodeBlock = ({ children, initialHeight = 0 }: { children: string; initialHeight?: number }) => {
-  const [ref, bounds] = useMeasure()
-  const [copying, setCopying] = useState<number>(0)
-  const timeoutRef = useRef<NodeJS.Timeout>()
+export const CodeBlock = ({
+  children,
+  initialHeight = 0,
+}: {
+  children: string;
+  initialHeight?: number;
+}) => {
+  const [ref, bounds] = useMeasure();
+  const [copying, setCopying] = useState<number>(0);
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
   const onCopy = useCallback(() => {
     try {
-      copy(children)
-      setCopying((c) => c + 1)
+      copy(children);
+      setCopying((c) => c + 1);
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
+        clearTimeout(timeoutRef.current);
       }
       timeoutRef.current = setTimeout(() => {
-        setCopying((c) => c - 1)
-      }, 2000)
+        setCopying((c) => c - 1);
+      }, 2000);
     } catch (error) {
-      console.error('Failed to copy:', error)
+      console.error("Failed to copy:", error);
     }
-  }, [children])
+  }, [children]);
 
   return (
     <div className={styles.outerWrapper}>
-      <button className={styles.copyButton} onClick={onCopy} aria-label="Copy code">
+      <button
+        className={styles.copyButton}
+        onClick={onCopy}
+        aria-label="Copy code"
+      >
         <MotionConfig transition={{ duration: 0.15 }}>
           <AnimatePresence initial={false} mode="wait">
             {copying ? (
-              <motion.div animate="visible" exit="hidden" initial="hidden" key="check" variants={variants}>
+              <motion.div
+                animate="visible"
+                exit="hidden"
+                initial="hidden"
+                key="check"
+                variants={variants}
+              >
                 <svg
                   viewBox="0 0 24 24"
                   width="14"
@@ -90,7 +106,13 @@ export const CodeBlock = ({ children, initialHeight = 0 }: { children: string; i
                 <span className="sr-only">Code copied successfully</span>
               </motion.div>
             ) : (
-              <motion.div animate="visible" exit="hidden" initial="hidden" key="copy" variants={variants}>
+              <motion.div
+                animate="visible"
+                exit="hidden"
+                initial="hidden"
+                key="copy"
+                variants={variants}
+              >
                 <svg
                   viewBox="0 0 24 24"
                   width="14"
@@ -114,25 +136,31 @@ export const CodeBlock = ({ children, initialHeight = 0 }: { children: string; i
           <motion.pre
             className={styles.wrapper}
             animate={{ height: bounds.height || initialHeight }}
-            transition={{ type: 'easeOut', duration: 0.2 }}
+            transition={{ type: "easeOut", duration: 0.2 }}
           >
             <div className={`${className} ${styles.root}`} ref={ref}>
               <div />
               {tokens.map((line, i) => {
-                const { key: lineKey, ...rest } = getLineProps({ line, key: i })
+                const { key: lineKey, ...rest } = getLineProps({
+                  line,
+                  key: i,
+                });
                 return (
                   <div key={lineKey} {...rest}>
                     {line.map((token, key) => {
-                      const { key: tokenKey, ...rest } = getTokenProps({ token, key })
-                      return <span key={tokenKey} {...rest} />
+                      const { key: tokenKey, ...rest } = getTokenProps({
+                        token,
+                        key,
+                      });
+                      return <span key={tokenKey} {...rest} />;
                     })}
                   </div>
-                )
+                );
               })}
             </div>
           </motion.pre>
         )}
       </Highlight>
     </div>
-  )
-}
+  );
+};

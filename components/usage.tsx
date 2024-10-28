@@ -1,5 +1,5 @@
-import React from 'react'
-import { CodeBlock } from './code-block'
+import React from "react";
+import { CodeBlock } from "./code-block/code-block";
 
 export default function Usage() {
   return (
@@ -21,5 +21,5 @@ function App() {
   )
 }`}</CodeBlock>
     </div>
-  )
+  );
 }

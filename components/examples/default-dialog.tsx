@@ -8,40 +8,29 @@ import {
   StackingDialogTitle,
   StackingDialogDescription,
   StackingDialogClose,
-  InnerDialog,
-  InnerDialogTrigger,
-  InnerDialogContent,
-  InnerDialogClose,
-  InnerDialogHeader,
-  InnerDialogFooter,
-  InnerDialogTitle,
-  InnerDialogDescription,
 } from "@/components/ui/dialog-stacking";
 import { Button } from "@/components/ui/button";
 
 export default function DefaultDialog() {
   return (
     <StackingDialog>
-      <StackingDialogTrigger asChild></StackingDialogTrigger>
-      <StackingDialogContent>
+      <StackingDialogTrigger asChild>
+        <Button variant="outline">Default Dialog</Button>
+      </StackingDialogTrigger>
+      <StackingDialogContent className="h-[230px] sm:max-w-[425px]">
         <StackingDialogHeader>
-          <StackingDialogTitle></StackingDialogTitle>
-          <StackingDialogDescription></StackingDialogDescription>
+          <StackingDialogTitle>Dialog Title</StackingDialogTitle>
+          <StackingDialogDescription>
+            Dialog Description
+          </StackingDialogDescription>
         </StackingDialogHeader>
-        <InnerDialog>
-          <InnerDialogTrigger asChild></InnerDialogTrigger>
-          <InnerDialogContent>
-            <InnerDialogHeader>
-              <InnerDialogTitle></InnerDialogTitle>
-              <InnerDialogDescription></InnerDialogDescription>
-            </InnerDialogHeader>
-            <InnerDialogFooter>
-              <InnerDialogClose asChild></InnerDialogClose>
-            </InnerDialogFooter>
-          </InnerDialogContent>
-        </InnerDialog>
+
         <StackingDialogFooter>
-          <StackingDialogClose asChild></StackingDialogClose>
+          <StackingDialogClose asChild>
+            <Button variant="outline" className="w-full">
+              Close Outer Dialog
+            </Button>
+          </StackingDialogClose>
         </StackingDialogFooter>
       </StackingDialogContent>
     </StackingDialog>

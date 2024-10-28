@@ -1,11 +1,34 @@
 import React from "react";
-import { CodeBlock } from "../code-block";
+import { CodeBlock } from "../code-block/code-block";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 export default function Usage() {
   return (
     <div className="mt-16 flex flex-col">
-      <h1 className="text-lg font-medium">Usage</h1>
-      <CodeBlock initialHeight={270}>{`
+      <h1 className="mb-2 text-lg font-medium">Usage</h1>
+      <Tabs defaultValue="default">
+        <TabsList>
+          <TabsTrigger value="default">Default</TabsTrigger>
+          <TabsTrigger value="nested">Nested</TabsTrigger>
+        </TabsList>
+        <TabsContent value="default">
+          <CodeBlock>{`
+<StackingDialog>
+  <StackingDialogTrigger asChild></StackingDialogTrigger>
+    <StackingDialogContent>
+      <StackingDialogHeader>
+        <StackingDialogTitle></StackingDialogTitle>
+        <StackingDialogDescription></StackingDialogDescription>
+      </StackingDialogHeader>
+    <StackingDialogFooter>
+      <StackingDialogClose asChild></StackingDialogClose>
+    </StackingDialogFooter>
+  </StackingDialogContent>
+</StackingDialog>
+      `}</CodeBlock>
+        </TabsContent>
+        <TabsContent value="nested">
+          <CodeBlock>{`
 <StackingDialog>
   <StackingDialogTrigger asChild></StackingDialogTrigger>
     <StackingDialogContent>
@@ -31,6 +54,8 @@ export default function Usage() {
   </StackingDialogContent>
 </StackingDialog>
       `}</CodeBlock>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
