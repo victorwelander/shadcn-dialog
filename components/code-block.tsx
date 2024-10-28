@@ -55,7 +55,7 @@ export default function CodeBlock({
       <div className="relative flex-1">
         <div className="sticky top-0 z-10">
           <button
-            className="absolute right-2 top-2 z-10 cursor-pointer bg-transparent p-2"
+            className="absolute right-2 top-1.5 z-10 cursor-pointer bg-transparent p-2"
             onClick={copyToClipboard}
           >
             <div
