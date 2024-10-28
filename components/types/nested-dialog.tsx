@@ -83,7 +83,7 @@ export default function NestedDialog() {
                 Payment Method
               </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-10 p-0 md:-mt-4">
+            <InnerDialogContent className="-mt-10 p-0 sm:-mt-4">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>
