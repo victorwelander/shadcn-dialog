@@ -4,19 +4,15 @@ import Hero from "@/components/hero";
 import Usage from "@/components/usage/usage";
 import React from "react";
 import Types from "@/components/types/types";
-import DefaultDialogEditor from "@/components/playground/default-dialog-editor";
-import NestedDialogEditor from "@/components/playground/nested-dialog-editor";
+import Playground from "@/components/playground/playground";
 
 export default function Index() {
   return (
-    <div className="mx-auto flex w-full max-w-[652px] flex-col justify-center p-4">
+    <div className="mx-auto flex w-full max-w-[652px] flex-col justify-center gap-12 p-4">
       <Hero />
       <Types />
       <Usage />
-      <div className="mb-32 mt-32 flex flex-col gap-4">
-        <DefaultDialogEditor />
-        <NestedDialogEditor />
-      </div>
+      <Playground />
     </div>
   );
 }

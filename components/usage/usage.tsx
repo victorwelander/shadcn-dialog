@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 export default function Usage() {
   return (
-    <div className="mt-16 flex flex-col">
+    <div className="flex flex-col">
       <h1 className="mb-2 text-lg font-medium">Usage</h1>
       <Tabs defaultValue="default">
         <TabsList>
