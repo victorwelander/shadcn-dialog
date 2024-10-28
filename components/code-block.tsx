@@ -74,7 +74,9 @@ export default function CodeBlock({
             </div>
           </button>
         </div>
-        <pre className={`relative ${!showLineNumbers ? "py-3" : "py-3"}`}>
+        <pre
+          className={`relative overflow-x-auto ${!showLineNumbers ? "py-3" : "py-3"}`}
+        >
           <table className="w-full border-collapse">
             <tbody>
               {code.split("\n").map((line, lineIndex) => (
