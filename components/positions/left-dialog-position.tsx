@@ -42,7 +42,7 @@ export default function LeftDialogPosition() {
                 Payment Method
               </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-10 p-0 sm:-mt-4" position="left">
+            <InnerDialogContent className="-mt-6 p-0 sm:-mt-3" position="left">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>
@@ -50,7 +50,7 @@ export default function LeftDialogPosition() {
                 </InnerDialogDescription>
               </InnerDialogHeader>
 
-              <div className="h-[90px]"></div>
+              <div className="h-[130px] md:h-[100px]"></div>
 
               <InnerDialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-x-2 sm:space-y-0">
                 <InnerDialogClose asChild>
