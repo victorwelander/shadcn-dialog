@@ -15,11 +15,11 @@ export default function Usage() {
           <CodeBlock>{`
 <StackingDialog>
   <StackingDialogTrigger asChild></StackingDialogTrigger>
-    <StackingDialogContent>
-      <StackingDialogHeader>
-        <StackingDialogTitle></StackingDialogTitle>
-        <StackingDialogDescription></StackingDialogDescription>
-      </StackingDialogHeader>
+  <StackingDialogContent>
+    <StackingDialogHeader>
+      <StackingDialogTitle></StackingDialogTitle>
+      <StackingDialogDescription></StackingDialogDescription>
+    </StackingDialogHeader>
     <StackingDialogFooter>
       <StackingDialogClose asChild></StackingDialogClose>
     </StackingDialogFooter>

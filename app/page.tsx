@@ -1,14 +1,11 @@
 "use client";
 
-import CodeBlock from "@/components/code-block";
 import Hero from "@/components/hero";
 import Usage from "@/components/usage/usage";
 import React from "react";
 import Types from "@/components/types/types";
-import Editor from "@/components/editor/editor";
-import DefaultDialog from "@/components/types/default-dialog";
-import { Button } from "@/components/ui/button";
 import DefaultDialogEditor from "@/components/playground/default-dialog-editor";
+import NestedDialogEditor from "@/components/playground/nested-dialog-editor";
 
 export default function Index() {
   return (
@@ -18,6 +15,7 @@ export default function Index() {
       <Usage />
       <div className="mb-32 mt-32 flex flex-col gap-4">
         <DefaultDialogEditor />
+        <NestedDialogEditor />
       </div>
     </div>
   );

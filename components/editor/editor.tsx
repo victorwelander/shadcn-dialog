@@ -71,7 +71,9 @@ export default function Editor({
           <LivePreview />
         </div>
 
-        <div className="relative overflow-hidden whitespace-pre-line">
+        <div
+          className={`relative overflow-hidden whitespace-pre-line ${open ? "border-b" : ""}`}
+        >
           <div
             className="flex cursor-pointer items-center justify-between p-2"
             onClick={() => setOpen(!open)}

@@ -27,24 +27,23 @@ export default function DefaultDialogEditor() {
         Button,
       }}
       code={`<StackingDialog>
-<StackingDialogTrigger asChild>
-  <Button variant="outline">Default Dialog</Button>
-</StackingDialogTrigger>
-<StackingDialogContent className="h-[230px] sm:max-w-[425px]">
-  <StackingDialogHeader>
-    <StackingDialogTitle>Dialog Title</StackingDialogTitle>
-    <StackingDialogDescription>
-      Dialog Description
-    </StackingDialogDescription>
-  </StackingDialogHeader>
-
-  <StackingDialogFooter>
-    <StackingDialogClose asChild>
-      <Button variant="outline" className="w-full">
-        Close Outer Dialog
-      </Button>
-    </StackingDialogClose>
-  </StackingDialogFooter>
+  <StackingDialogTrigger asChild>
+    <Button>Default Dialog</Button>
+  </StackingDialogTrigger>
+  <StackingDialogContent>
+    <StackingDialogHeader>
+     <StackingDialogTitle>Dialog Title</StackingDialogTitle>
+     <StackingDialogDescription>
+       Dialog Description
+     </StackingDialogDescription>
+    </StackingDialogHeader>
+    <StackingDialogFooter>
+      <StackingDialogClose asChild>
+        <Button variant="outline" className="w-full">
+          Close Outer Dialog
+        </Button>
+      </StackingDialogClose>
+    </StackingDialogFooter>
   </StackingDialogContent>
 </StackingDialog>`}
     />
