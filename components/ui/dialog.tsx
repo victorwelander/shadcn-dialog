@@ -130,7 +130,7 @@ const InnerDialogContent = React.forwardRef<
           position === "default" &&
             "data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]",
           position === "bottom" &&
-            "data-[state=open]:slide-in-from-bottom-[2%]",
+            "data-[state=closed]:slide-out-to-bottom-[10%] data-[state=open]:slide-in-from-bottom-[10%]",
           position === "top" &&
             "data-[state=closed]:slide-out-to-top-full data-[state=open]:slide-in-from-top-full",
           position === "left" &&
