@@ -60,7 +60,7 @@ export default function Editor({
     e.stopPropagation();
     navigator.clipboard.writeText(code).then(() => {
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), 1000);
     });
   };
 
@@ -75,18 +75,18 @@ export default function Editor({
           className={`relative overflow-hidden whitespace-pre-line ${open ? "border-b" : ""}`}
         >
           <div
-            className="flex cursor-pointer items-center justify-between p-2"
+            className="flex cursor-pointer items-center justify-between p-1"
             onClick={() => setOpen(!open)}
           >
             <div className="flex items-center">
               <ChevronRight
-                size={16}
+                size={15}
                 style={{
                   transition: "transform 200ms",
                   transform: `rotate(${open ? 90 : 0}deg)`,
                 }}
               />
-              <p className="ml-2 text-sm">Code Editor</p>
+              <p className="ml-2 text-[13px]">Code Editor</p>
             </div>
 
             <div className="flex items-center">

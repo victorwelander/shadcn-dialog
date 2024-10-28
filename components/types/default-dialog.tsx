@@ -17,20 +17,19 @@ export default function DefaultDialog() {
       <StackingDialogTrigger asChild>
         <Button variant="outline">Default Dialog</Button>
       </StackingDialogTrigger>
-      <StackingDialogContent className="h-[230px] sm:max-w-[425px]">
-        <StackingDialogHeader>
+      <StackingDialogContent className="p-0">
+        <StackingDialogHeader className="p-4">
           <StackingDialogTitle>Dialog Title</StackingDialogTitle>
           <StackingDialogDescription>
             Dialog Description
           </StackingDialogDescription>
         </StackingDialogHeader>
 
-        <StackingDialogFooter>
+        <StackingDialogFooter className="flex items-center justify-between border-t px-4 py-2">
           <StackingDialogClose asChild>
-            <Button variant="outline" className="w-full">
-              Close Outer Dialog
-            </Button>
+            <Button variant="outline">Cancel</Button>
           </StackingDialogClose>
+          <Button>Save</Button>
         </StackingDialogFooter>
       </StackingDialogContent>
     </StackingDialog>

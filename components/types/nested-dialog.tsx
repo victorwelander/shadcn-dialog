@@ -27,33 +27,32 @@ export default function NestedDialog() {
       <StackingDialogTrigger asChild>
         <Button variant="outline">Nested Dialog</Button>
       </StackingDialogTrigger>
-      <StackingDialogContent className="h-[230px] sm:max-w-[425px]">
-        <StackingDialogHeader>
+      <StackingDialogContent className="p-0">
+        <StackingDialogHeader className="p-4">
           <StackingDialogTitle>Dialog Title</StackingDialogTitle>
           <StackingDialogDescription>
             Dialog Description
           </StackingDialogDescription>
         </StackingDialogHeader>
-        <div className="py-4">
+
+        <StackingDialogFooter className="flex items-center justify-between border-t px-4 py-2">
           <InnerDialog>
             <InnerDialogTrigger asChild>
-              <Button variant="outline" className="w-full">
-                Open Nested
-              </Button>
+              <Button variant="outline">Open Nested</Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="sm:max-w-[425px]">
+            <InnerDialogContent className="">
               <InnerDialogHeader>
                 <InnerDialogTitle>Nested Dialog Title</InnerDialogTitle>
                 <InnerDialogDescription>
                   Nested Dialog Description
                 </InnerDialogDescription>
               </InnerDialogHeader>
-              <div className="py-4">
-                <p className="text-sm text-muted-foreground">
-                  Enter your current password and a new password to update your
-                  account security.
-                </p>
-              </div>
+
+              <p className="text-sm text-muted-foreground">
+                Enter your current password and a new password to update your
+                account security.
+              </p>
+
               <InnerDialogFooter>
                 <InnerDialogClose asChild>
                   <Button variant="outline" className="w-full">
@@ -63,13 +62,12 @@ export default function NestedDialog() {
               </InnerDialogFooter>
             </InnerDialogContent>
           </InnerDialog>
-        </div>
-        <StackingDialogFooter>
-          <StackingDialogClose asChild>
-            <Button variant="outline" className="w-full">
-              Close Outer Dialog
-            </Button>
-          </StackingDialogClose>
+          <div className="flex items-center gap-2">
+            <StackingDialogClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </StackingDialogClose>
+            <Button>Save</Button>
+          </div>
         </StackingDialogFooter>
       </StackingDialogContent>
     </StackingDialog>
