@@ -18,6 +18,23 @@ function Dialog({ children }: { children: React.ReactNode }) {
   const [outerOpen, setOuterOpen] = React.useState(false);
   const [innerOpen, setInnerOpen] = React.useState(false);
 
+  React.useEffect(() => {
+    const handleEscapeKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        if (innerOpen) {
+          setInnerOpen(false);
+        } else if (outerOpen) {
+          setOuterOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKeyDown);
+    };
+  }, [innerOpen, outerOpen]);
+
   return (
     <DialogContext.Provider value={{ innerOpen, setInnerOpen }}>
       <DialogPrimitive.Root open={outerOpen} onOpenChange={setOuterOpen}>
@@ -28,7 +45,9 @@ function Dialog({ children }: { children: React.ReactNode }) {
 }
 
 const DialogTrigger = DialogPrimitive.Trigger;
+
 const DialogPortal = DialogPrimitive.Portal;
+
 const DialogClose = DialogPrimitive.Close;
 
 const DialogOverlay = React.forwardRef<
@@ -80,21 +99,6 @@ function InnerDialog({ children }: { children: React.ReactNode }) {
   const context = React.useContext(DialogContext);
   if (!context) throw new Error("InnerDialog must be used within a Dialog");
 
-  // Scoped Escape Key Listener for Inner Dialog
-  React.useEffect(() => {
-    const handleEscapeKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && context.innerOpen) {
-        context.setInnerOpen(false);
-        event.stopPropagation(); // Stop event propagation to prevent outer dialog from closing
-      }
-    };
-
-    document.addEventListener("keydown", handleEscapeKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleEscapeKeyDown);
-    };
-  }, [context.innerOpen, context.setInnerOpen]);
-
   return (
     <DialogPrimitive.Root
       open={context.innerOpen}
@@ -106,6 +110,7 @@ function InnerDialog({ children }: { children: React.ReactNode }) {
 }
 
 const InnerDialogTrigger = DialogPrimitive.Trigger;
+
 const InnerDialogClose = DialogPrimitive.Close;
 
 interface InnerDialogContentProps
@@ -277,3 +282,76 @@ export {
   InnerDialogTitle,
   InnerDialogDescription,
 };
+
+{
+  /*
+interface InnerDialogContentProps
+  extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
+  position?: "default" | "bottom";
+}
+
+const InnerDialogContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  InnerDialogContentProps
+>(({ className, children, position = "default", ...props }, ref) => {
+  const context = React.useContext(DialogContext);
+  if (!context)
+    throw new Error("InnerDialogContent must be used within a Dialog");
+
+  return (
+    <DialogPortal>
+      <DialogPrimitive.Content
+        ref={ref}
+        className={cn(
+          "fixed left-[50%] top-[50%] z-[60] grid w-full max-w-lg translate-x-[-50%] translate-y-[-45%] gap-4 rounded-lg border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]",
+          position === "bottom" &&
+            "data-[state=open]:slide-in-from-bottom-[2%]",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+        <InnerDialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </InnerDialogClose>
+      </DialogPrimitive.Content>
+    </DialogPortal>
+  );
+});
+InnerDialogContent.displayName = "InnerDialogContent";
+*/
+}
+
+{
+  /*
+const InnerDialogContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+>(({ className, children, ...props }, ref) => {
+  const context = React.useContext(DialogContext);
+  if (!context)
+    throw new Error("InnerDialogContent must be used within a Dialog");
+
+  return (
+    <DialogPortal>
+      <DialogPrimitive.Content
+        ref={ref}
+        className={cn(
+          "fixed left-[50%] top-[50%] z-[60] grid w-full max-w-lg translate-x-[-50%] translate-y-[-45%] gap-4 rounded-lg border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+        <InnerDialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </InnerDialogClose>
+      </DialogPrimitive.Content>
+    </DialogPortal>
+  );
+});
+InnerDialogContent.displayName = "InnerDialogContent";
+*/
+}

@@ -7,7 +7,7 @@ import SiteFooter from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: "Shadcn Dialog",
-  description: "Shadcn Dialog component with stacking dialogs.",
+  description: "Nested dialog component built on top of shadcn",
 };
 
 export default function RootLayout({
@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
-        {" "}
         <Analytics />
         {children}
         <SiteFooter />

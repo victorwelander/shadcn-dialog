@@ -6,7 +6,7 @@ import CodeBlock from "../code-block";
 export default function Usage() {
   return (
     <div className="flex flex-col">
-      <h1 className="mb-2 text-lg font-medium">Usage</h1>
+      <h1 className="mb-2 text-[16px] font-medium">Usage</h1>
       {/*
       <Tabs defaultValue="default">
         <TabsList>
@@ -88,21 +88,21 @@ export default function Usage() {
             lang="tsx"
             code={`<Dialog>
   <DialogTrigger asChild></DialogTrigger>
-    <DialogContent>
-      <DialogHeader>
-        <DialogTitle></DialogTitle>
-        <DialogDescription></DialogDescription>
-      </DialogHeader>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle></DialogTitle>
+      <DialogDescription></DialogDescription>
+    </DialogHeader>
 
-      <InnerDialog>
-        <InnerDialogTrigger asChild></InnerDialogTrigger>
-        <InnerDialogContent>
-          <InnerDialogHeader>
-            <InnerDialogTitle></InnerDialogTitle>
+    <InnerDialog>
+      <InnerDialogTrigger asChild></InnerDialogTrigger>
+      <InnerDialogContent>
+        <InnerDialogHeader>
+          <InnerDialogTitle></InnerDialogTitle>
           <InnerDialogDescription></InnerDialogDescription>
         </InnerDialogHeader>
         <InnerDialogFooter>
-          <InnerDialogClose asChild></InnerDialogClose>
+        <InnerDialogClose asChild></InnerDialogClose>
         </InnerDialogFooter>
       </InnerDialogContent>
     </InnerDialog>

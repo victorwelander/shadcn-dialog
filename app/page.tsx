@@ -14,7 +14,6 @@ export default function Index() {
       <Types />
       <Positions />
       <Usage />
-      <Playground />
     </div>
   );
 }
