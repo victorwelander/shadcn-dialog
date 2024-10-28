@@ -5,6 +5,7 @@ import Usage from "@/components/usage/usage";
 import React from "react";
 import Types from "@/components/types/types";
 import Playground from "@/components/playground/playground";
+import { Input } from "@/components/ui/input";
 
 export default function Index() {
   return (
@@ -13,6 +14,8 @@ export default function Index() {
       <Types />
       <Usage />
       <Playground />
+      <input className="mt-1 h-8 rounded-lg border bg-white px-2 text-[16px] text-black outline-none transition placeholder:text-sm focus-within:border-neutral-400 focus-within:ring-[3px] focus-within:ring-black/10" />
+      <Input />
     </div>
   );
 }

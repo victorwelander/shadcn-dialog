@@ -15,7 +15,7 @@ const variants = {
 
 const theme = {
   plain: {
-    color: "var(--gray12)",
+    color: "#171717",
     fontSize: 12,
     fontFamily: "var(--font-mono)",
   },
@@ -23,25 +23,25 @@ const theme = {
     {
       types: ["comment"],
       style: {
-        color: "var(--gray9)",
+        color: "#8F8F8F",
       },
     },
     {
       types: ["atrule", "keyword", "attr-name", "selector", "string"],
       style: {
-        color: "var(--gray11)",
+        color: "#6F6F6F",
       },
     },
     {
       types: ["punctuation", "operator"],
       style: {
-        color: "var(--gray9)",
+        color: "#8F8F8F",
       },
     },
     {
       types: ["class-name", "function", "tag"],
       style: {
-        color: "var(--gray12)",
+        color: "#171717",
       },
     },
   ],

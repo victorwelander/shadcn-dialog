@@ -9,7 +9,7 @@ export default function Hero() {
         <h1 className="text-[30px] font-bold md:text-[48px]">
           Nested Shadcn Dialog
         </h1>
-        <p className="text-sm text-muted-foreground md:text-[16px]">
+        <p className="text-sm text-[var(--ds-gray-900)] md:text-[16px]">
           Render multiple dialogs within eachother
         </p>
       </div>
@@ -21,6 +21,15 @@ export default function Hero() {
           <SiGithub />
           <span>Github</span>
         </Button>
+      </div>
+      <div className="mt-6 text-sm text-[var(--ds-gray-900)] md:text-[16px]">
+        <p>
+          The nested dialog uses a shared context to manage state, making it
+          easy to control multiple layers. The outer dialog handles the inner
+          one, so transitions are smooth and everything just works intuitively.
+          Each layer scales visually, keeping the dialogs clear and the user
+          experience seamless.
+        </p>
       </div>
     </div>
   );

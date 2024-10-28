@@ -72,7 +72,7 @@ export default function Editor({
         </div>
 
         <div
-          className={`relative overflow-hidden whitespace-pre-line ${open ? "border-b" : ""}`}
+          className={`relative overflow-hidden whitespace-pre-line rounded-b-lg bg-[var(--ds-gray-100)] ${open ? "border-b" : ""}`}
         >
           <div
             className="flex cursor-pointer items-center justify-between p-1"
@@ -131,9 +131,10 @@ export default function Editor({
               <LiveEditor
                 theme={THEME}
                 onChange={(newCode: string) => setCode(newCode)}
+                className=""
                 style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: "1em",
+                  fontSize: "1.15em",
                   padding: 14,
                 }}
               />

@@ -71,40 +71,55 @@ body {
   }
 }
 
-:root,
-.light {
-  --gray0: #fff;
-  --gray1: hsl(0, 0%, 99%);
-  --gray2: hsl(0, 0%, 97.3%);
-  --gray3: hsl(0, 0%, 95.1%);
-  --gray4: hsl(0, 0%, 93%);
-  --gray5: hsl(0, 0%, 90.9%);
-  --gray6: hsl(0, 0%, 88.7%);
-  --gray7: hsl(0, 0%, 85.8%);
-  --gray8: hsl(0, 0%, 78%);
-  --gray9: hsl(0, 0%, 56.1%);
-  --gray10: hsl(0, 0%, 52.3%);
-  --gray11: hsl(0, 0%, 43.5%);
-  --gray12: hsl(0, 0%, 9%);
-  --hover: rgb(40, 40, 40);
-  --border-radius: 6px;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
-    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  --font-mono: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+body,
+html {
+  text-rendering: optimizeLegibility;
+  background-color: var(--ds-background-200);
+  color: var(--ds-gray-1000);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.dark {
-  --gray0: #000;
-  --gray1: hsl(0, 0%, 9.5%);
-  --gray2: hsl(0, 0%, 10.5%);
-  --gray3: hsl(0, 0%, 15.8%);
-  --gray4: hsl(0, 0%, 18.9%);
-  --gray5: hsl(0, 0%, 21.7%);
-  --gray6: hsl(0, 0%, 24.7%);
-  --gray7: hsl(0, 0%, 29.1%);
-  --gray8: hsl(0, 0%, 37.5%);
-  --gray9: hsl(0, 0%, 43%);
-  --gray10: hsl(0, 0%, 50.7%);
-  --gray11: hsl(0, 0%, 69.5%);
-  --gray12: hsl(0, 0%, 93.5%);
+:root {
+  --font-extra-small: 12px;
+  --font-small: 0.875rem;
+  --font-normal: 16px;
+}
+
+:root,
+.dark-theme,
+.invert-theme {
+  --geist-foreground: #000000;
+  --geist-background: #ffffff;
+
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+}
+
+.dark-theme,
+.invert-theme {
+  --geist-foreground: #ffffff;
+  --geist-background: #000000;
+
+  --accents-2: #333;
+  --accents-1: #111;
+}
+
+:root {
+  --ds-gray-100: #fcfcfc;
+  --ds-gray-900: #666;
+  --ds-gray-1000: #171717;
+
+  --ds-background-100: #ffffff;
+}
+
+.dark-theme {
+  --ds-gray-100: #1a1a1a;
+  --ds-gray-900: #a1a1a1;
+  --ds-gray-1000: #ededed;
+
+  --ds-background-100: #0a0a0a;
 }

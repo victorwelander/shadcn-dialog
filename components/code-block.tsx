@@ -51,7 +51,7 @@ export default function CodeBlock({
   };
 
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-background-700)] shadow-sm">
+    <div className="relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]">
       <div className="relative flex-1">
         <div className="sticky top-0 z-10">
           <button

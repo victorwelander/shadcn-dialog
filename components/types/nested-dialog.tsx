@@ -38,7 +38,10 @@ export default function NestedDialog() {
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">
           <DialogTitle>Payment</DialogTitle>
-          <DialogDescription>Dialog Description</DialogDescription>
+          <DialogDescription>
+            Please enter your credit card credentials below to complete the
+            payment process.
+          </DialogDescription>
         </DialogHeader>
 
         <div className="flex flex-col gap-4 p-4">
@@ -83,7 +86,7 @@ export default function NestedDialog() {
                 Payment Method
               </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-10 p-0 sm:-mt-4">
+            <InnerDialogContent className="-mt-12 p-0 sm:-mt-6">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>

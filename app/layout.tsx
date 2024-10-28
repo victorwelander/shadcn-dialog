@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import "./globals.css";
+import "@/styles/globals.css";
+import SiteFooter from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: "Shadcn Dialog",
@@ -20,6 +21,7 @@ export default function RootLayout({
         {" "}
         <Analytics />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
