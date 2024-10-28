@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function SiteFooter() {
   return (
-    <div className="mt-[164px] border-t p-4">
-      <div className="mx-auto flex w-full max-w-[652px] items-center">
+    <div className="mt-[164px] border-t bg-[var(--ds-gray-100)]">
+      <div className="mx-auto flex w-full max-w-[642px] flex-col justify-center gap-12 p-8 md:p-4">
         <p className="flex items-center gap-3 text-sm text-[var(--ds-gray-900)]">
           <Image
             src={avatar}
