@@ -4,6 +4,7 @@ import { SiGithub } from "react-icons/si";
 import RenderNestedDialog from "./demos/render-nested-dialog";
 import Image from "next/image";
 import logo from "@/public/logo.svg";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -19,9 +20,16 @@ export default function Hero() {
       </div>
       <div className="mt-4 flex items-center gap-3">
         <RenderNestedDialog />
-        <Button variant="outline" className="flex items-center gap-1">
-          <SiGithub />
-          <span>Github</span>
+        <Button variant="outline">
+          <Link
+            href="https://github.com/victorwelander/shadcn-dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1"
+          >
+            <SiGithub />
+            <span>Github</span>
+          </Link>
         </Button>
       </div>
       <div className="mt-6 text-sm text-[var(--ds-gray-900)] md:text-[16px]">
