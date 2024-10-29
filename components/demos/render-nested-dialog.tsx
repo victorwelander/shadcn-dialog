@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Dialog,
   DialogTrigger,
@@ -24,11 +24,17 @@ import { usePaymentInputs } from "react-payment-inputs";
 import { CreditCard } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { SiApplepay, SiPaypal, SiVisa } from "react-icons/si";
 
 export default function RenderNestedDialog() {
-  const { getCardNumberProps } = usePaymentInputs();
-  const { getExpiryDateProps } = usePaymentInputs();
-  const { getCVCProps } = usePaymentInputs();
+  const { getCardNumberProps, getExpiryDateProps, getCVCProps } =
+    usePaymentInputs();
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("paypal");
+
+  const handleClick = (value: string) => {
+    setSelectedPaymentMethod(value);
+  };
 
   return (
     <Dialog>
@@ -86,7 +92,7 @@ export default function RenderNestedDialog() {
                 Payment Method
               </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-14 p-0 sm:-mt-6">
+            <InnerDialogContent className="-mt-10 p-0 sm:-mt-5">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>
@@ -95,9 +101,62 @@ export default function RenderNestedDialog() {
               </InnerDialogHeader>
 
               <div className="flex flex-col gap-4 p-4">
-                <div className="rounded-lg border p-8"></div>
-                <div className="rounded-lg border p-8"></div>
-                <div className="rounded-lg border p-8"></div>
+                <RadioGroup
+                  value={selectedPaymentMethod}
+                  onValueChange={setSelectedPaymentMethod}
+                >
+                  <div
+                    className={`flex cursor-pointer items-center justify-between rounded-lg border p-4 hover:bg-accent ${
+                      selectedPaymentMethod === "paypal" ? "bg-accent" : ""
+                    }`}
+                    onClick={() => handleClick("paypal")}
+                  >
+                    <div className="flex items-center space-x-4">
+                      <SiPaypal className="h-6 w-6" />
+                      <div>
+                        <h3 className="text-sm font-medium">PayPal</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Pay with your PayPal account
+                        </p>
+                      </div>
+                    </div>
+                    <RadioGroupItem value="paypal" id="paypal" />
+                  </div>
+                  <div
+                    className={`flex cursor-pointer items-center justify-between rounded-lg border p-4 hover:bg-accent ${
+                      selectedPaymentMethod === "creditcard" ? "bg-accent" : ""
+                    }`}
+                    onClick={() => handleClick("creditcard")}
+                  >
+                    <div className="flex items-center space-x-4">
+                      <SiVisa className="h-6 w-6" />
+                      <div>
+                        <h3 className="text-sm font-medium">Credit Card</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Pay with Visa, Mastercard, or American Express
+                        </p>
+                      </div>
+                    </div>
+                    <RadioGroupItem value="creditcard" id="creditcard" />
+                  </div>
+                  <div
+                    className={`flex cursor-pointer items-center justify-between rounded-lg border p-4 hover:bg-accent ${
+                      selectedPaymentMethod === "applepay" ? "bg-accent" : ""
+                    }`}
+                    onClick={() => handleClick("applepay")}
+                  >
+                    <div className="flex items-center space-x-4">
+                      <SiApplepay className="h-6 w-6" />
+                      <div>
+                        <h3 className="text-sm font-medium">Apple Pay</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Pay with Apple Pay
+                        </p>
+                      </div>
+                    </div>
+                    <RadioGroupItem value="applepay" id="applepay" />
+                  </div>
+                </RadioGroup>
               </div>
 
               <InnerDialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-x-2 sm:space-y-0">
