@@ -5,6 +5,7 @@ import Usage from "@/components/usage/usage";
 import React from "react";
 import Types from "@/components/types/types";
 import Positions from "@/components/positions/positions";
+import Others from "@/components/others/others";
 
 export default function Index() {
   return (
@@ -12,6 +13,7 @@ export default function Index() {
       <Hero />
       <Types />
       <Positions />
+      <Others />
       <Usage />
     </div>
   );
