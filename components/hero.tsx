@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <div className="mt-12 flex flex-col items-center justify-center text-center">
       <div className="flex flex-col items-center">
-        <Image src={logo} alt="logo" width={100} height={40} />
+        <Image src={logo} alt="logo" width={50} height={50} />
         <h1 className="text-[30px] font-bold md:text-[48px]">
           Nested Shadcn Dialog
         </h1>
