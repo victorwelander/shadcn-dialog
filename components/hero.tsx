@@ -15,7 +15,7 @@ export default function Hero() {
           Nested Shadcn Dialog
         </h1>
         <p className="text-sm text-[var(--ds-gray-900)] md:text-[16px]">
-          Render multiple dialogs within eachother
+          Render multiple dialogs within each other
         </p>
       </div>
       <div className="mt-4 flex items-center gap-3">
