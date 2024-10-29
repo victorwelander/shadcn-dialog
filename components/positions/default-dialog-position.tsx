@@ -18,6 +18,7 @@ import {
   InnerDialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "../ui/skeleton";
 
 export default function DefaultDialogPosition() {
   return (
@@ -33,7 +34,18 @@ export default function DefaultDialogPosition() {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="h-[100px]"></div>
+        <div className="w-full px-4 py-2">
+          <div className="flex w-full flex-col gap-2">
+            <div className="flex w-full gap-2">
+              <Skeleton className="h-20 w-20 flex-shrink-0" />
+              <div className="flex flex-grow flex-col space-y-2">
+                <Skeleton className="h-5 w-full" />
+                <Skeleton className="h-5 w-80" />
+              </div>
+            </div>
+            <Skeleton className="h-32 w-full" />
+          </div>
+        </div>
 
         <DialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-y-0">
           <InnerDialog>
@@ -42,7 +54,7 @@ export default function DefaultDialogPosition() {
                 Payment Method
               </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-2 p-0 sm:-mt-1">
+            <InnerDialogContent className="-mt-6 p-0 sm:-mt-1">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>
@@ -50,7 +62,15 @@ export default function DefaultDialogPosition() {
                 </InnerDialogDescription>
               </InnerDialogHeader>
 
-              <div className="h-[150px] md:h-[120px]"></div>
+              <div className="w-full px-4 py-2">
+                <div className="flex w-full flex-col gap-2">
+                  <div className="flex w-full flex-col gap-2">
+                    <Skeleton className="h-16 w-full" />
+                    <Skeleton className="h-16 w-full" />
+                    <Skeleton className="h-16 w-full" />
+                  </div>
+                </div>
+              </div>
 
               <InnerDialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-x-2 sm:space-y-0">
                 <InnerDialogClose asChild>

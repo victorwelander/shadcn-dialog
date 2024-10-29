@@ -4,9 +4,13 @@ import CodeBlock from "./code-block";
 export default function DialogCode() {
   return (
     <div className="flex flex-col">
-      <h1 className="mb-2 text-[16px] font-medium">Dialog.tsx</h1>
+      <div className="mb-2 flex flex-col">
+        <h1 className="text-[16px] font-medium">Dialog.tsx</h1>
+        <p className="text-sm text-[var(--ds-gray-900)]">
+          Copy paste it into your dialog.tsx and you are all set
+        </p>
+      </div>
       <CodeBlock
-        className="max-h-[600px]"
         showLineNumbers
         lang="tsx"
         code={`"use client";
@@ -49,7 +53,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-background/40 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className,
     )}
     {...props}
@@ -71,7 +75,7 @@ const DialogContent = React.forwardRef<
         ref={ref}
         className={cn(
           "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
-          context.innerOpen && "translate-y-[-55%] scale-[0.97] opacity-100",
+          context.innerOpen && "translate-y-[-55%] scale-[0.97]",
           className,
         )}
         {...props}
@@ -180,7 +184,7 @@ const InnerDialogContent = React.forwardRef<
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
-          style={{
+            style={{
             transform: \`translate(-50%, calc(-50% + \${currentY}px))\`,
             transition: isDragging ? "none" : "transform 0.3s ease-out",
           }}
@@ -345,3 +349,10 @@ export {
     </div>
   );
 }
+
+/* 
+          style={{
+            transform: \`translate(-50%, calc(-50% + \${currentY}px))\`,
+            transition: isDragging ? "none" : "transform 0.3s ease-out",
+          }}
+*/

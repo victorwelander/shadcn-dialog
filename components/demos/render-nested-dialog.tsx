@@ -52,13 +52,17 @@ export default function RenderNestedDialog() {
 
         <div className="flex flex-col gap-4 p-4">
           <div className="flex flex-col">
-            <Label className="mb-1.5 text-muted-foreground">Card Holder*</Label>
+            <Label className="mb-1.5 text-xs text-muted-foreground">
+              Card Holder*
+            </Label>
             <div className="relative">
               <Input placeholder="Card Holder Name" />
             </div>
           </div>
           <div className="flex flex-col">
-            <Label className="mb-1.5 text-muted-foreground">Card Number*</Label>
+            <Label className="mb-1.5 text-xs text-muted-foreground">
+              Card Number*
+            </Label>
             <div className="relative">
               <Input
                 {...getCardNumberProps()}
@@ -71,7 +75,7 @@ export default function RenderNestedDialog() {
           </div>
           <div className="grid grid-cols-2 gap-2">
             <div className="flex flex-col">
-              <Label className="mb-1.5 text-muted-foreground">
+              <Label className="mb-1.5 text-xs text-muted-foreground">
                 Expiration month and year*
               </Label>
               <Input
@@ -80,7 +84,9 @@ export default function RenderNestedDialog() {
               />
             </div>
             <div className="flex flex-col">
-              <Label className="mb-1.5 text-muted-foreground">CVC*</Label>
+              <Label className="mb-1.5 text-xs text-muted-foreground">
+                CVC*
+              </Label>
               <Input {...getCVCProps()} className="[direction:inherit]" />
             </div>
           </div>
@@ -92,7 +98,7 @@ export default function RenderNestedDialog() {
                 Payment Method
               </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-10 p-0 sm:-mt-5">
+            <InnerDialogContent className="-mt-6 p-0 sm:-mt-1">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>
