@@ -91,6 +91,7 @@ html {
 
 :root {
   --ds-gray-100: #fcfcfc;
+  --ds-gray-500: #c9c9c9;
   --ds-gray-900: #666;
   --ds-gray-1000: #171717;
 
@@ -99,6 +100,7 @@ html {
 
 .dark-theme {
   --ds-gray-100: #1a1a1a;
+  --ds-gray-500: #454545;
   --ds-gray-900: #a1a1a1;
   --ds-gray-1000: #ededed;
 
