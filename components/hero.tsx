@@ -2,11 +2,14 @@ import React from "react";
 import { Button } from "./ui/button";
 import { SiGithub } from "react-icons/si";
 import RenderNestedDialog from "./demos/render-nested-dialog";
+import Image from "next/image";
+import logo from "@/public/logo.svg";
 
 export default function Hero() {
   return (
-    <div className="mt-24 flex flex-col items-center justify-center text-center">
-      <div>
+    <div className="mt-12 flex flex-col items-center justify-center text-center">
+      <div className="flex flex-col items-center">
+        <Image src={logo} alt="logo" width={100} height={40} />
         <h1 className="text-[30px] font-bold md:text-[48px]">
           Nested Shadcn Dialog
         </h1>
