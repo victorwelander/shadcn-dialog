@@ -188,7 +188,7 @@ const InnerDialogContent = React.forwardRef<
               "data-[state=closed]:slide-out-to-left-full data-[state=open]:slide-in-from-left-full",
             position === "right" &&
               "data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-right-full",
-            draggable && "cursor-grab active:cursor-grabbing",
+            draggable && "",
             className,
           )}
           {...props}
