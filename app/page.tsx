@@ -6,6 +6,7 @@ import React from "react";
 import Types from "@/components/types/types";
 import Positions from "@/components/positions/positions";
 import Others from "@/components/others/others";
+import DialogCode from "@/components/dialog-code";
 
 export default function Index() {
   return (

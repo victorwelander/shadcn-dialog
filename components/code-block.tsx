@@ -3,16 +3,19 @@
 import React, { useState, useEffect } from "react";
 import type { BundledLanguage } from "shiki";
 import { Copy, Check } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface CodeBlockProps {
   code: string;
   lang?: BundledLanguage;
   showLineNumbers?: boolean;
+  className?: string;
 }
 
 export default function CodeBlock({
   code,
   lang = "tsx",
+  className,
   showLineNumbers = false,
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
@@ -51,7 +54,12 @@ export default function CodeBlock({
   };
 
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]">
+    <div
+      className={cn(
+        "relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]",
+        className,
+      )}
+    >
       <div className="relative flex-1">
         <div className="sticky top-0 z-10">
           <button

@@ -42,7 +42,7 @@ export default function DefaultDialogPosition() {
                 Payment Method
               </Button>
             </InnerDialogTrigger>
-            <InnerDialogContent className="-mt-2 p-0 sm:-mt-1" draggable>
+            <InnerDialogContent className="-mt-2 p-0 sm:-mt-1">
               <InnerDialogHeader className="border-b p-4">
                 <InnerDialogTitle>Choose a payment method</InnerDialogTitle>
                 <InnerDialogDescription>
