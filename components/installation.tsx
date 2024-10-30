@@ -4,7 +4,12 @@ import CodeBlock from "./code-block";
 export default function Installation() {
   return (
     <div className="flex flex-col">
-      <h1 className="mb-2 text-[16px] font-medium">Installation</h1>
+      <div className="mb-2 flex flex-col">
+        <h1 className="text-[16px] font-medium">Installation</h1>
+        <p className="text-sm text-[var(--ds-gray-900)]">
+          This will install the dialog using the shadcn CLI remote URL
+        </p>
+      </div>
       <div className="flex gap-2">
         <CodeBlock
           fileName="Terminal"
