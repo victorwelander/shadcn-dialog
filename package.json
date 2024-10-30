@@ -31,7 +31,8 @@
     "react-use-measure": "^2.1.1",
     "shiki": "^1.22.2",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",
