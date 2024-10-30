@@ -37,7 +37,7 @@ export default function Demonstration() {
                 : outerRef.current?.offsetHeight || "auto",
           }}
           transition={{
-            duration: 0.3,
+            duration: 0.4,
             ease: "easeInOut",
           }}
         >
@@ -63,6 +63,9 @@ export default function Demonstration() {
               animate={{ opacity: 1, translateY: "5%" }}
               exit={{ opacity: 0, translateY: "100%" }}
               transition={{
+                stiffness: 200,
+                damping: 25,
+                type: "spring",
                 duration: 0.3,
                 ease: "easeInOut",
               }}
