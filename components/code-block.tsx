@@ -65,7 +65,7 @@ export default function CodeBlock({
   const IconComponent = type === "terminal" ? FileTerminal : File;
 
   return (
-    <div className="relative flex max-h-96 flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]">
+    <div className="relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]">
       {fileName && (
         <div className="flex items-center justify-between rounded-t-lg border-b bg-[var(--ds-gray-100)] px-2 py-1">
           <div className="flex items-center gap-1">
@@ -119,7 +119,9 @@ export default function CodeBlock({
             </button>
           )}
         </div>
-        <pre className={`relative ${!showLineNumbers ? "py-3" : "py-3"}`}>
+        <pre
+          className={`relative overflow-x-auto ${!showLineNumbers ? "py-3" : "py-3"}`}
+        >
           <table className="w-full border-collapse">
             <tbody>
               {content.code.split("\n").map((line, lineIndex) => (
