@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import type { BundledLanguage } from "shiki";
 import { Copy, Check, File, FileTerminal } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface CodeBlockProps {
   fileName?: string;
@@ -10,6 +11,7 @@ interface CodeBlockProps {
   lang?: BundledLanguage;
   type?: "file" | "terminal";
   showLineNumbers?: boolean;
+  className?: string;
 }
 
 export default function CodeBlock({
@@ -18,6 +20,7 @@ export default function CodeBlock({
   lang = "tsx",
   type = "file",
   showLineNumbers = false,
+  className,
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const [html, setHtml] = useState<string[]>([]);
@@ -65,7 +68,12 @@ export default function CodeBlock({
   const IconComponent = type === "terminal" ? FileTerminal : File;
 
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]">
+    <div
+      className={cn(
+        "relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]",
+        className,
+      )}
+    >
       {fileName && (
         <div className="flex items-center justify-between rounded-t-lg border-b bg-[var(--ds-gray-100)] px-2 py-1">
           <div className="flex items-center gap-1">

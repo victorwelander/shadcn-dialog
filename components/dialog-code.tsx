@@ -12,6 +12,8 @@ export default function DialogCode() {
       </div>
       <CodeBlock
         showLineNumbers
+        fileName="Dialog.tsx"
+        type="file"
         lang="tsx"
         code={`"use client";
 

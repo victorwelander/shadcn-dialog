@@ -11,6 +11,7 @@ export default function Installation() {
           type="terminal"
           showLineNumbers
           lang="bash"
+          className="w-full"
           code={`npx shadcn add https://shadcn-dialog.vercel.app/registry/dialog.json`}
         />
       </div>
