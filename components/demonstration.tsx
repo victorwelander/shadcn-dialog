@@ -69,7 +69,21 @@ export default function Demonstration() {
                 duration: 0.3,
                 ease: "easeInOut",
               }}
-            ></motion.div>
+            >
+              {" "}
+              <div className="w-full p-4">
+                <div className="flex w-full flex-col gap-4">
+                  <div className="flex w-full gap-4">
+                    <Skeleton className="h-20 w-20 flex-shrink-0" />
+                    <div className="flex flex-grow flex-col space-y-2">
+                      <Skeleton className="h-5 w-full" />
+                      <Skeleton className="h-5 w-4/5" />
+                    </div>
+                  </div>
+                  <Skeleton className="h-32 w-full" />
+                </div>
+              </div>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>
