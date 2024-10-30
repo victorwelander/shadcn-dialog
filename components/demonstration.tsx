@@ -23,7 +23,7 @@ export default function Demonstration() {
   }, [cycleCount]);
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center bg-gray-100">
+    <div className="flex w-full flex-col items-center justify-center">
       <div className="relative w-full max-w-lg">
         <motion.div
           ref={outerRef}
