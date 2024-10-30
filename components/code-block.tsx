@@ -69,7 +69,7 @@ export default function CodeBlock({
   return (
     <div
       className={cn(
-        "relative flex flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]",
+        "relative flex max-h-[600px] flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]",
         className,
       )}
     >
@@ -118,8 +118,8 @@ export default function CodeBlock({
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M11.7406 0.182697C12.0539 0.453627 12.0882 0.927247 11.8173 1.24057L4.4673 9.7406C4.3305 9.8988 4.1339 9.9926 3.92494 9.9996C3.71594 10.0066 3.51353 9.9259 3.36654 9.7772L0.216537 6.5897C-0.074613 6.2951 -0.0718031 5.8202 0.222817 5.5291C0.517437 5.2379 0.992297 5.2407 1.28346 5.5353L3.86327 8.1458L10.6827 0.259447C10.9536 -0.0538732 11.4272 -0.088233 11.7406 0.182697Z"
                   fill="currentColor"
                 />
@@ -128,7 +128,7 @@ export default function CodeBlock({
           </button>
         </div>
       )}
-      <div className="relative flex-1">
+      <div className="relative flex-1 overflow-auto">
         <div className="sticky top-0 z-10">
           {!fileName && (
             <button
@@ -168,8 +168,8 @@ export default function CodeBlock({
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M11.7406 0.182697C12.0539 0.453627 12.0882 0.927247 11.8173 1.24057L4.4673 9.7406C4.3305 9.8988 4.1339 9.9926 3.92494 9.9996C3.71594 10.0066 3.51353 9.9259 3.36654 9.7772L0.216537 6.5897C-0.074613 6.2951 -0.0718031 5.8202 0.222817 5.5291C0.517437 5.2379 0.992297 5.2407 1.28346 5.5353L3.86327 8.1458L10.6827 0.259447C10.9536 -0.0538732 11.4272 -0.088233 11.7406 0.182697Z"
                     fill="currentColor"
                   />
@@ -193,7 +193,9 @@ export default function CodeBlock({
                   <td className="w-full">
                     {html[0] && (
                       <code
-                        className={`light:[&_span]:!text-[var(--shiki-light)] block h-4 text-xs [&_code]:!bg-transparent [&_pre]:!bg-transparent [&_span]:!bg-transparent dark:[&_span]:!text-[var(--shiki-dark)] ${!showLineNumbers ? "pl-3" : ""}`}
+                        className={`light:[&_span]:!text-[var(--shiki-light)] block h-4 text-xs [&_code]:!bg-transparent [&_pre]:!bg-transparent [&_span]:!bg-transparent dark:[&_span]:!text-[var(--shiki-dark)] ${
+                          !showLineNumbers ? "pl-3" : ""
+                        }`}
                         dangerouslySetInnerHTML={{
                           __html: html[0].split("\n")[lineIndex] || "",
                         }}

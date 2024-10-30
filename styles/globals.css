@@ -78,6 +78,12 @@ html {
 
   --accents-1: #fafafa;
   --accents-2: #eaeaea;
+  --accents-3: #999999;
+  --accents-4: #888888;
+  --accents-5: #666666;
+  --accents-6: #444444;
+  --accents-7: #333333;
+  --accents-8: #111111;
 }
 
 .dark-theme,
@@ -85,24 +91,44 @@ html {
   --geist-foreground: #ffffff;
   --geist-background: #000000;
 
+  --accents-8: #fafafa;
+  --accents-7: #eaeaea;
+  --accents-6: #999;
+  --accents-5: #888;
+  --accents-4: #666;
+  --accents-3: #444;
   --accents-2: #333;
   --accents-1: #111;
 }
 
 :root {
   --ds-gray-100: #fcfcfc;
+  --ds-gray-300: #e6e6e6;
   --ds-gray-500: #c9c9c9;
   --ds-gray-900: #666;
   --ds-gray-1000: #171717;
+
+  --ds-gray-alpha-300: #0000001a;
+  --ds-gray-alpha-400: #00000014;
+
+  --ds-blue-300: #dfefff;
+  --ds-blue-900: #0059ec;
 
   --ds-background-100: #ffffff;
 }
 
 .dark-theme {
   --ds-gray-100: #1a1a1a;
+  --ds-gray-300: #292929;
   --ds-gray-500: #454545;
   --ds-gray-900: #a1a1a1;
   --ds-gray-1000: #ededed;
+
+  --ds-gray-alpha-300: #ffffff21;
+  --ds-gray-alpha-400: #ffffff24;
+
+  --ds-blue-300: #002f62;
+  --ds-blue-900: #47a8ff;
 
   --ds-background-100: #0a0a0a;
 }
