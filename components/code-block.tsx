@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import type { BundledLanguage } from "shiki";
-import { Copy, Check, File, FileTerminal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CodeBlockProps {
@@ -65,7 +64,7 @@ export default function CodeBlock({
     });
   };
 
-  const IconComponent = type === "terminal" ? FileTerminal : File;
+  const IconComponent = type === "terminal" ? Terminal : File;
 
   return (
     <div
@@ -76,14 +75,14 @@ export default function CodeBlock({
     >
       {fileName && (
         <div className="flex items-center justify-between rounded-t-lg border-b bg-[var(--ds-gray-100)] px-2 py-1">
-          <div className="flex items-center gap-1">
-            <IconComponent stroke="var(--ds-gray-900)" size={14} />
+          <div className="flex items-center gap-2">
+            <IconComponent className="text-[var(--ds-gray-900)]" />
             <span className="text-xs font-medium text-[var(--ds-gray-900)]">
               {fileName}
             </span>
           </div>
           <button
-            className="relative cursor-pointer bg-transparent p-2"
+            className="relative cursor-pointer bg-transparent p-2 text-[var(--ds-gray-900)]"
             onClick={copyToClipboard}
           >
             <div
@@ -91,14 +90,40 @@ export default function CodeBlock({
                 copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
               }`}
             >
-              <Copy className="h-4 w-4 text-[var(--ds-gray-800)] hover:text-[var(--ds-gray-900)]" />
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M0 2C0 0.89543 0.89543 0 2 0H12C13.1046 0 14 0.89543 14 2V6H18C19.1046 6 20 6.89543 20 8V18C20 19.1046 19.1046 20 18 20H8C6.89543 20 6 19.1046 6 18V14H2C0.89543 14 0 13.1046 0 12V2ZM12.5 6H8C6.89543 6 6 6.89543 6 8V12.5H2C1.72386 12.5 1.5 12.2761 1.5 12V2C1.5 1.72386 1.72386 1.5 2 1.5H12C12.2761 1.5 12.5 1.72386 12.5 2V6Z"
+                  fill="currentColor"
+                />
+              </svg>
             </div>
             <div
               className={`absolute inset-0 flex transform items-center justify-center transition-all duration-300 ${
                 copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
               }`}
             >
-              <Check className="h-4 w-4 text-[var(--ds-gray-800)] hover:text-[var(--ds-gray-900)]" />
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M15.4299 0.201208C16.0092 0.576688 16.1744 1.3507 15.799 1.93002L7.049 15.43C6.835 15.7601 6.4782 15.9702 6.0858 15.9972C5.69333 16.0242 5.31109 15.8649 5.05399 15.5672L0.30399 10.0672C-0.14724 9.5447 -0.0894799 8.7554 0.433 8.3041C0.95547 7.8529 1.74482 7.9106 2.19605 8.4331L5.85717 12.6723L13.7011 0.570278C14.0766 -0.00904197 14.8506 -0.174272 15.4299 0.201208Z"
+                  fill="currentColor"
+                />
+              </svg>
             </div>
           </button>
         </div>
@@ -107,7 +132,7 @@ export default function CodeBlock({
         <div className="sticky top-0 z-10">
           {!fileName && (
             <button
-              className={`absolute z-10 cursor-pointer bg-transparent p-2 ${"right-2 top-1.5"}`}
+              className={`absolute z-10 cursor-pointer bg-transparent p-2 text-[var(--ds-gray-900)] ${"right-2 top-1.5"}`}
               onClick={copyToClipboard}
             >
               <div
@@ -115,14 +140,40 @@ export default function CodeBlock({
                   copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
                 }`}
               >
-                <Copy className="h-4 w-4 text-[var(--ds-gray-800)] hover:text-[var(--ds-gray-900)]" />
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M0 2C0 0.89543 0.89543 0 2 0H12C13.1046 0 14 0.89543 14 2V6H18C19.1046 6 20 6.89543 20 8V18C20 19.1046 19.1046 20 18 20H8C6.89543 20 6 19.1046 6 18V14H2C0.89543 14 0 13.1046 0 12V2ZM12.5 6H8C6.89543 6 6 6.89543 6 8V12.5H2C1.72386 12.5 1.5 12.2761 1.5 12V2C1.5 1.72386 1.72386 1.5 2 1.5H12C12.2761 1.5 12.5 1.72386 12.5 2V6Z"
+                    fill="currentColor"
+                  />
+                </svg>
               </div>
               <div
                 className={`absolute inset-0 flex transform items-center justify-center transition-all duration-300 ${
                   copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               >
-                <Check className="h-4 w-4 text-[var(--ds-gray-800)] hover:text-[var(--ds-gray-900)]" />
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M15.4299 0.201208C16.0092 0.576688 16.1744 1.3507 15.799 1.93002L7.049 15.43C6.835 15.7601 6.4782 15.9702 6.0858 15.9972C5.69333 16.0242 5.31109 15.8649 5.05399 15.5672L0.30399 10.0672C-0.14724 9.5447 -0.0894799 8.7554 0.433 8.3041C0.95547 7.8529 1.74482 7.9106 2.19605 8.4331L5.85717 12.6723L13.7011 0.570278C14.0766 -0.00904197 14.8506 -0.174272 15.4299 0.201208Z"
+                    fill="currentColor"
+                  />
+                </svg>
               </div>
             </button>
           )}
@@ -156,5 +207,47 @@ export default function CodeBlock({
         </pre>
       </div>
     </div>
+  );
+}
+
+function Terminal({ className }: { className?: string }) {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 2.75C0 1.23122 1.23122 0 2.75 0H15.25C16.7688 0 18 1.23122 18 2.75V15.25C18 16.7688 16.7688 18 15.25 18H2.75C1.23122 18 0 16.7688 0 15.25V2.75ZM3.71967 4.21967C4.01256 3.92678 4.48744 3.92678 4.78033 4.21967L6.53033 5.96967C6.82322 6.26256 6.82322 6.73744 6.53033 7.0303L4.78033 8.7803C4.48744 9.0732 4.01256 9.0732 3.71967 8.7803C3.42678 8.4874 3.42678 8.0126 3.71967 7.7197L4.93934 6.5L3.71967 5.28033C3.42678 4.98744 3.42678 4.51256 3.71967 4.21967ZM7.75 7.5C7.3358 7.5 7 7.8358 7 8.25C7 8.6642 7.3358 9 7.75 9H9.75C10.1642 9 10.5 8.6642 10.5 8.25C10.5 7.8358 10.1642 7.5 9.75 7.5H7.75Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function File({ className }: { className?: string }) {
+  return (
+    <svg
+      width="12"
+      height="16"
+      viewBox="0 0 16 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M8 0H2.75C1.23122 0 0 1.23122 0 2.75V17.25C0 18.7688 1.23122 20 2.75 20H13.25C14.7688 20 16 18.7688 16 17.25V8H10.75C9.2312 8 8 6.76878 8 5.25V0Z"
+        fill="currentColor"
+      />
+      <path
+        d="M15.5566 6.49993C15.5343 6.47493 15.5112 6.45051 15.4874 6.42671L9.5732 0.512489C9.5494 0.488689 9.525 0.465639 9.5 0.443359V5.24993C9.5 5.94029 10.0596 6.49993 10.75 6.49993H15.5566Z"
+        fill="currentColor"
+      />
+    </svg>
   );
 }
