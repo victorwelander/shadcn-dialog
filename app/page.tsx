@@ -9,6 +9,7 @@ import Others from "@/components/others/others";
 import DialogCode from "@/components/dialog-code";
 import Installation from "@/components/installation";
 import DialogPropsTable from "@/components/dialog-props-table";
+import Link from "next/link";
 
 export default function Index() {
   return (
@@ -27,6 +28,18 @@ export default function Index() {
       <DialogCode />
       <hr />
       <DialogPropsTable />
+      <p className="text-[var(--ds-gray-900)]">
+        If you have any questions or find any bugs feel free to reach out to me
+        at{" "}
+        <Link
+          href="https://x.com/victorwelander_"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--ds-gray-1000)] underline decoration-[0.8px] underline-offset-4"
+        >
+          @victorwelander_
+        </Link>
+      </p>
     </div>
   );
 }
