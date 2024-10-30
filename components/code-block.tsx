@@ -76,13 +76,13 @@ export default function CodeBlock({
       {fileName && (
         <div className="flex items-center justify-between rounded-t-lg border-b bg-[var(--ds-gray-100)] px-2 py-1">
           <div className="flex items-center gap-2">
-            <IconComponent className="text-[var(--ds-gray-900)]" />
+            <IconComponent className="text-[#a0a0a0]" />
             <span className="text-xs font-medium text-[var(--ds-gray-900)]">
               {fileName}
             </span>
           </div>
           <button
-            className="relative cursor-pointer bg-transparent p-2 text-[var(--ds-gray-900)]"
+            className="relative cursor-pointer bg-transparent p-2 text-[#a0a0a0]"
             onClick={copyToClipboard}
           >
             <div
@@ -132,7 +132,7 @@ export default function CodeBlock({
         <div className="sticky top-0 z-10">
           {!fileName && (
             <button
-              className={`absolute z-10 cursor-pointer bg-transparent p-2 text-[var(--ds-gray-900)] ${"right-2 top-1.5"}`}
+              className={`absolute z-10 cursor-pointer bg-transparent p-2 text-[#a0a0a0] ${"right-2 top-1.5"}`}
               onClick={copyToClipboard}
             >
               <div
