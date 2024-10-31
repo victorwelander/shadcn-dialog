@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
 
       <p className="mt-6 text-sm text-[var(--ds-gray-900)] md:text-[16px]">
-        The{" "}
+        The nested{" "}
         <Link
           href="https://ui.shadcn.com/"
           className="underline decoration-[1px] underline-offset-2"
