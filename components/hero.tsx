@@ -76,15 +76,24 @@ export default function Hero() {
         </Button>
       </div>
 
-      <div className="mt-6 text-sm text-[var(--ds-gray-900)] md:text-[16px]">
-        <p>
+      <p className="mt-6 text-sm text-[var(--ds-gray-900)] md:text-[16px]">
+        The{" "}
+        <Link
+          href="https://ui.shadcn.com/"
+          className="underline decoration-[1px] underline-offset-2"
+        >
+          shadcn
+        </Link>{" "}
+        dialog allows you to use nested dialogs, meaning you can render multiple
+        dialogs within each other, essentially stacking dialogs.
+        {/*
           The nested dialog uses a shared context to manage state, making it
           easy to control multiple layers. The outer dialog handles the inner
           one, so transitions are smooth and everything just works intuitively.
           Each layer scales visually, keeping the dialogs clear and the user
           experience seamless.
-        </p>
-      </div>
+        */}
+      </p>
     </div>
   );
 }

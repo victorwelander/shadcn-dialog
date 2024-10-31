@@ -45,7 +45,7 @@ export default function DefaultDialog() {
           </div>
         </div>
 
-        <DialogFooter className="flex flex-col items-center justify-between space-y-2 border-t px-4 py-2 sm:flex-row sm:space-x-2 sm:space-y-0">
+        <DialogFooter className="flex flex-row items-center justify-between space-x-2 border-t px-4 py-2">
           <DialogClose asChild>
             <Button variant="outline" className="w-full sm:w-auto">
               Cancel

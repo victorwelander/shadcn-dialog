@@ -35,7 +35,7 @@ export default function Index() {
           href="https://x.com/victorwelander_"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[var(--ds-gray-1000)] underline decoration-[0.8px] underline-offset-4"
+          className="underline decoration-[1px] underline-offset-2"
         >
           @victorwelander_
         </Link>
