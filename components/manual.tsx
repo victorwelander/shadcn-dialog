@@ -373,10 +373,3 @@ export function cn(...inputs: ClassValue[]) {
     </div>
   );
 }
-
-/* 
-          style={{
-            transform: \`translate(-50%, calc(-50% + \${currentY}px))\`,
-            transition: isDragging ? "none" : "transform 0.3s ease-out",
-          }}
-*/
