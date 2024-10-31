@@ -17,7 +17,7 @@ export default function DialogCode() {
           showLineNumbers
           lang="bash"
           className="w-full"
-          code={`npm i @radix-ui/react-dialog lucide-react`}
+          code={`npm i @radix-ui/react-dialog lucide-react clsx tailwind-merge`}
         />
         <CodeBlock
           showLineNumbers
