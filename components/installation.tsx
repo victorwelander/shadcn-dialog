@@ -7,7 +7,8 @@ export default function Installation() {
       <div className="mb-2 flex flex-col">
         <h1 className="text-[16px] font-medium">Installation</h1>
         <p className="text-sm text-[var(--ds-gray-900)]">
-          This will install the dialog using the shadcn CLI remote URL
+          This will install the dialog and the necessary dependencies using the
+          shadcn CLI remote URL
         </p>
       </div>
       <div className="flex gap-2">
