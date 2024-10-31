@@ -5,17 +5,26 @@ export default function DialogCode() {
   return (
     <div className="flex flex-col">
       <div className="mb-2 flex flex-col">
-        <h1 className="text-[16px] font-medium">Dialog.tsx</h1>
+        <h1 className="text-[16px] font-medium">Manual Installation</h1>
         <p className="text-sm text-[var(--ds-gray-900)]">
-          Copy paste it into your dialog.tsx and you are all set
+          Install the necessary dependencies and add the following files
         </p>
       </div>
-      <CodeBlock
-        showLineNumbers
-        fileName="Dialog.tsx"
-        type="file"
-        lang="tsx"
-        code={`"use client";
+      <div className="flex flex-col gap-4">
+        <CodeBlock
+          fileName="Terminal"
+          type="terminal"
+          showLineNumbers
+          lang="bash"
+          className="w-full"
+          code={`npm i @radix-ui/react-dialog lucide-react`}
+        />
+        <CodeBlock
+          showLineNumbers
+          fileName="dialog.tsx"
+          type="file"
+          lang="tsx"
+          code={`"use client";
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
@@ -347,7 +356,20 @@ export {
   DialogPortal,
   DialogOverlay,
 };`}
-      />
+        />
+        <CodeBlock
+          showLineNumbers
+          fileName="utils.ts"
+          type="file"
+          lang="ts"
+          code={`import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}`}
+        />
+      </div>
     </div>
   );
 }

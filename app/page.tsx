@@ -6,7 +6,7 @@ import React from "react";
 import Types from "@/components/types/types";
 import Positions from "@/components/positions/positions";
 import Others from "@/components/others/others";
-import DialogCode from "@/components/dialog-code";
+import DialogCode from "@/components/manual";
 import Installation from "@/components/installation";
 import DialogPropsTable from "@/components/dialog-props-table";
 import Link from "next/link";
