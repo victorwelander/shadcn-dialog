@@ -28,7 +28,7 @@ export default function Index() {
       <DialogCode />
       <hr />
       <DialogPropsTable />
-      <p className="text-[var(--ds-gray-900)]">
+      <p className="text-sm text-[var(--ds-gray-900)] md:text-[16px]">
         If you have any questions or find any bugs feel free to reach out to me
         at{" "}
         <Link
