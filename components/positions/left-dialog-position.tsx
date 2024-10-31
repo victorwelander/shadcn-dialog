@@ -24,7 +24,23 @@ export default function LeftDialogPosition() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Left</Button>
+        <Button variant="outline" className="flex items-center gap-1.5">
+          <span>Left</span>
+          <svg
+            width="12"
+            height="8"
+            viewBox="0 0 18 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M10.1161 0.36612C10.6043 -0.12204 11.3957 -0.12204 11.8839 0.36612L17.6339 6.1161C17.8683 6.3505 18 6.6685 18 7C18 7.3315 17.8683 7.6494 17.6339 7.8839L11.8839 13.6339C11.3957 14.122 10.6043 14.122 10.1161 13.6339C9.628 13.1457 9.628 12.3543 10.1161 11.8661L13.7322 8.25H1.25C0.55964 8.25 0 7.6903 0 7C0 6.3096 0.55964 5.75 1.25 5.75H13.7322L10.1161 2.13388C9.628 1.64573 9.628 0.85427 10.1161 0.36612Z"
+              fill="black"
+            />
+          </svg>
+        </Button>
       </DialogTrigger>
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">

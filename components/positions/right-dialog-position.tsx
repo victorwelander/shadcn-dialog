@@ -24,7 +24,24 @@ export default function RightDialogPosition() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Right</Button>
+        <Button variant="outline" className="flex items-center gap-1.5">
+          <svg
+            width="12"
+            height="8"
+            viewBox="0 0 18 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.8839 13.6339C7.3957 14.122 6.60427 14.122 6.11612 13.6339L0.36612 7.8839C0.1317 7.6495 0 7.3315 0 7C0 6.6685 0.13169 6.3506 0.36612 6.1161L6.11612 0.36612C6.60427 -0.12204 7.3957 -0.12204 7.8839 0.36612C8.372 0.85427 8.372 1.64573 7.8839 2.13388L4.26776 5.75H16.75C17.4404 5.75 18 6.3097 18 7C18 7.6904 17.4404 8.25 16.75 8.25H4.26777L7.8839 11.8661C8.372 12.3543 8.372 13.1457 7.8839 13.6339Z"
+              fill="black"
+            />
+          </svg>
+
+          <span>Right</span>
+        </Button>
       </DialogTrigger>
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">

@@ -24,7 +24,23 @@ export default function BottomDialogPosition() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Bottom</Button>
+        <Button variant="outline" className="flex items-center gap-1.5">
+          <svg
+            width="8"
+            height="12"
+            viewBox="0 0 14 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M7 0C7.3315 0 7.6494 0.1317 7.8839 0.36612L13.6339 6.11612C14.122 6.60427 14.122 7.3957 13.6339 7.8839C13.1457 8.372 12.3543 8.372 11.8661 7.8839L8.25 4.26776V16.75C8.25 17.4404 7.6903 18 7 18C6.3096 18 5.75 17.4404 5.75 16.75V4.26777L2.13388 7.8839C1.64573 8.372 0.85427 8.372 0.36612 7.8839C-0.12204 7.3957 -0.12204 6.60427 0.36612 6.11612L6.1161 0.36612C6.3505 0.1317 6.6685 0 7 0Z"
+              fill="black"
+            />
+          </svg>
+          <span>Bottom</span>
+        </Button>
       </DialogTrigger>
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">

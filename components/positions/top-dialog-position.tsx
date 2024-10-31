@@ -24,7 +24,24 @@ export default function TopDialogPosition() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Top</Button>
+        <Button variant="outline" className="flex items-center gap-1.5">
+          <svg
+            width="8"
+            height="12"
+            viewBox="0 0 14 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M7 18C6.6685 18 6.3506 17.8683 6.1161 17.6339L0.36612 11.8839C-0.12204 11.3957 -0.12204 10.6043 0.36612 10.1161C0.85427 9.628 1.64573 9.628 2.13388 10.1161L5.75 13.7322V1.25C5.75 0.55964 6.3097 0 7 0C7.6904 0 8.25 0.55964 8.25 1.25V13.7322L11.8661 10.1161C12.3543 9.628 13.1457 9.628 13.6339 10.1161C14.122 10.6043 14.122 11.3957 13.6339 11.8839L7.8839 17.6339C7.6495 17.8683 7.3315 18 7 18Z"
+              fill="black"
+            />
+          </svg>
+
+          <span>Top</span>
+        </Button>
       </DialogTrigger>
       <DialogContent className="p-0">
         <DialogHeader className="border-b p-4">
