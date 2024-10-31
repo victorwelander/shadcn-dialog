@@ -57,7 +57,6 @@ export default function DraggableDialog() {
               fill="black"
             />
           </svg>
-
           <span>Draggable</span>
         </Button>
       </DialogTrigger>

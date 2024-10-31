@@ -31,6 +31,7 @@ export default function TopDialogPosition() {
             viewBox="0 0 14 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="hidden sm:block"
           >
             <path
               fillRule="evenodd"
