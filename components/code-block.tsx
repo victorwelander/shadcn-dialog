@@ -69,7 +69,7 @@ export default function CodeBlock({
   return (
     <div
       className={cn(
-        "relative flex max-h-[600px] flex-col overflow-hidden rounded-lg border bg-[var(--ds-gray-100)]",
+        "relative flex max-h-[600px] flex-col overflow-hidden rounded-lg border",
         className,
       )}
     >
