@@ -28,7 +28,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute right-[13%] hidden -translate-y-[1px] translate-x-16 md:right-[26%] md:block md:translate-y-[20px] lg:right-[32%] xl:right-[36%]">
+      <div className="absolute right-[13%] hidden -translate-y-[1px] translate-x-16 md:right-[26%] md:block md:translate-y-[38px] lg:right-[32%] xl:right-[36%]">
         <svg
           width="101"
           height="64"
