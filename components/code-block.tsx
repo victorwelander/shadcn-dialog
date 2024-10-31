@@ -82,11 +82,11 @@ export default function CodeBlock({
             </span>
           </div>
           <button
-            className="relative cursor-pointer bg-transparent p-2 text-[#a0a0a0]"
+            className="relative cursor-pointer bg-transparent p-2 text-[#a0a0a0] hover:text-[#606060]"
             onClick={copyToClipboard}
           >
             <div
-              className={`transform transition-all duration-300 ${
+              className={`transform transition-all duration-200 ${
                 copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
               }`}
             >
@@ -132,11 +132,11 @@ export default function CodeBlock({
         <div className="sticky top-0 z-10">
           {!fileName && (
             <button
-              className={`absolute z-10 cursor-pointer bg-transparent p-2 text-[#a0a0a0] ${"right-2 top-1.5"}`}
+              className={`absolute z-10 cursor-pointer bg-transparent p-2 text-[#a0a0a0] hover:text-[#606060] ${"right-2 top-1.5"}`}
               onClick={copyToClipboard}
             >
               <div
-                className={`transform transition-all duration-300 ${
+                className={`transform transition-all duration-200 ${
                   copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
                 }`}
               >
